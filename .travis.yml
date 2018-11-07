@@ -15,6 +15,7 @@ env:
     - secure: "EoinZd17cDK66nvQ/nCwy2pUbH9dhxtSXWP6SfoXRAMWLxUtGLNDz9qczxjZryNui3I7xH91UmuwA0xnU4yaLPGJkCwg6bhKpMFis3EUI/EdkW3Qf1bj50JqDIqcJQ2TA2on2ohTduFGVBPUfCwAGlsyXZDXE9o0SF3ok5WoVBm/61h6nxK5WmHY5/LUybDUYB1p+y1digM/vSxXRed+52dtBA4A9sYwfjolm26/REst2X8IvHAp4psDf1POhWKf74E8xiKzSjK+3xBZynbiJZLjz/4H/5f7nqUZBvfsE5g/P9wHoQSj4SeFySIGoscmw04M07U9QuX8mVsPlbQXqF6xWhfS/2YkmTLOQS96WFcUS4Iol3zbimU/3+VGfTOmDZrehjvkpmLTQGZkhOxVclRxyqFNcbgFNuhkZqNV58j/hzX8slPN5sPEKI/haV9//iyR/OgMXXTJA1GobE1iPUXzHKsi/kuDZyZiPalO36Z1DC7BS1AhG3JWTNolR6Nvy2LoXdDpgN8tOB1qjhNK4zlCiJLG2Q0Ya8hPAKklh+M2ZYvqySVWISJ6Ey9OgcPA9TN5S7emAqrJuUCpCaedQEsa+vdYtn/lRRIOlGGXDqRtTvLnGuY24ZP0imElj3SC/HwOtXEwIf6TXgcgSR1ax0183PtUNL9hkTT1IQvR2Iw="
 
 deploy:
+  provider: script
   skip_cleanup: true
   script: >
     # Deploy
