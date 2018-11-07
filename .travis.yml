@@ -19,21 +19,22 @@ deploy:
   skip_cleanup: true
   script: bash deploy.sh
   on:
-    branch: travis
+    condition: $TRAVIS_BRANCH =~ ^travis|dev|master$
 
 
 before_script:
   # SM
-  - wget "https://sourcemod.net/latest.php?os=linux&version=1.10" -O /tmp/sourcemod.tar.gz
+  - wget "https://sourcemod.net/latest.php?os=linux&version=1.9" -O /tmp/sourcemod.tar.gz
+  - mkdir ~/sm && cd ~/sm
   - tar xzf /tmp/sourcemod.tar.gz addons/sourcemod/scripting
+  - PATH+=:$PWD/addons/sourcemod/scripting
   # SM Builder
   - git clone "https://github.com/splewis/sm-builder" ~/sm-builder
   - cd ~/sm-builder
   - pip install --user -r requirements.txt
   - python setup.py install --prefix=~/.local
-
-  - PATH+=:$TRAVIS_BUILD_DIR/addons/sourcemod/scripting
+  
   - cd $TRAVIS_BUILD_DIR
 
 script:
-  - smbuilder
+  - smbuilder --flags " -i=addons/sourcemod/scripting/include"
