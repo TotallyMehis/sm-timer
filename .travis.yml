@@ -19,6 +19,7 @@ deploy:
   skip_cleanup: true
   script: bash deploy.sh
   on:
+    all_branches: true
     condition: $TRAVIS_BRANCH =~ ^travis|dev|master$
 
 
@@ -33,7 +34,7 @@ before_script:
   - cd ~/sm-builder
   - pip install --user -r requirements.txt
   - python setup.py install --prefix=~/.local
-  
+
   - cd $TRAVIS_BUILD_DIR
 
 script:
